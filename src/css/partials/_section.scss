@@ -29,7 +29,7 @@
       border-radius: 50%;
       top: -350px;
       left: -300px;
-      z-index: -5;
+      // z-index: -5;
       background-color: $primary;
 
       @include mobile {
@@ -45,8 +45,20 @@
         right: -420px;
 
         @include mobile {
-          bottom: -350px;
+          bottom: -380px;
           right: -170px;
+        }
+      }
+    }
+
+    &--ml {
+      &::before {
+        width: 350px;
+        height: 350px;
+        top: 20px;
+        left: -230px;
+        @include mobile {
+          display:none;
         }
       }
     }
