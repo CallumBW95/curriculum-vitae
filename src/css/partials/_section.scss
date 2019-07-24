@@ -90,16 +90,16 @@
             width: 100%;
             box-shadow: 0px 20px 20px -15px rgba(0, 0, 0, 0.5);
           }
-          &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: $primary;
-            opacity: 0.5;
-          }
+          // &::after {
+          //   content: "";
+          //   position: absolute;
+          //   top: 0;
+          //   right: 0;
+          //   bottom: 0;
+          //   left: 0;
+          //   background-color: $primary;
+          //   opacity: 0.5;
+          // }
         }
 
         @media(min-width:768px) {
