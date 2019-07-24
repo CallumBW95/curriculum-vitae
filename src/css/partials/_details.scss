@@ -8,6 +8,7 @@
   &__detail {
     padding: $spacer/2 0;
     position: relative;
+    display: flex;
 
     &::before {
       content: '';

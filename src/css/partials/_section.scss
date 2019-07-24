@@ -2,7 +2,11 @@
 .section {
   position: relative;
   overflow: hidden;
-  padding: $spacer*4 0 $spacer*4;
+  padding: $spacer*4 0;
+
+  @media(max-width: 767px) {
+    padding: $spacer*4 0 $spacer*2;
+  }
 
   .container {
     height: 100%;
