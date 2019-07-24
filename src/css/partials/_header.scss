@@ -33,13 +33,22 @@ header {
     &__bar {
       width: 50px;
       height: 8px;
-      background-color: darken($secondary, 5%);;
+      background-color: darken($secondary, 5%);
       transition: $transition;
       border-radius:10px;
       pointer-events: none;
       
       &:nth-child(2) {
         margin:6px 0;
+      }
+    }
+    &--light {
+      .menu {
+        &__icon {
+          &__bar {
+            background-color: $primary;
+          }
+        }
       }
     }
   }
@@ -76,14 +85,16 @@ header {
     text-align: center;
     color: $primary;
     transition: all 0.3s;
-    font-family: $font-secondary;
+    font-family: $font-primary;
     font-size: 20px;
+    text-decoration: none;
+
     @include desktop { 
       font-size:24px;
     }
+    
     &:hover {
       color: $white;
-      text-decoration: none;
       @include mobile { 
         background-color: darken($secondary, 10%);
       }

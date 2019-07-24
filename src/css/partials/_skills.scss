@@ -1,0 +1,17 @@
+.skills {
+  display: inline-block;
+  &__skill {
+    display: inline-block;
+    font-family: $font-primary;
+    line-height:$spacer;
+    color: $primary;
+    margin-right: $spacer;
+    &::before {
+      content:'check_box';
+      font-family: "Material Icons";
+      margin-right:$spacer /4;
+      line-height:$spacer;
+      vertical-align: text-bottom;
+    }
+  }
+}

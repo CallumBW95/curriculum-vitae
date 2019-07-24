@@ -38,6 +38,7 @@ footer {
   line-height: 40px;
   padding: 0 20px;
   display: inherit;
+  font-family: $font-secondary;
 
   @include mobile {
     display: flex;

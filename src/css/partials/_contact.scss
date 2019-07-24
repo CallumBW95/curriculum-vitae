@@ -1,0 +1,54 @@
+.cf {
+  label {
+    position:relative;
+  }
+
+  input {
+    border: none;
+    padding: $spacer;
+    width: 100%;
+    margin-bottom: $spacer;
+    font-size: 18px;
+    outline: none;
+    transition: all $transition;
+    background-color: darken($secondary,10%);
+    color: $light-grey;
+    font-family: $font-secondary;
+
+    &.button {
+      color: black;
+      line-height: 0;
+    }
+
+    &::placeholder {
+      transition: all $transition;
+      color: $light-grey;
+      font-family: $font-secondary;
+    }
+    
+    &:focus, &.focus {
+      padding-top: 28px;
+      padding-bottom: 12px;
+      
+      &::placeholder {
+        color: transparent;
+      }
+      
+      & + span {
+        opacity: 1;
+        top: -20px;
+      }
+    }
+  }
+
+  span {
+    color: $primary;
+    font-size: 13px;
+    font-family: $font-primary;
+    position: absolute;
+    top: -40px;
+    left: $spacer;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+}

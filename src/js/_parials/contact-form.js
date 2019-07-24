@@ -1,0 +1,1 @@
+document.addEventListener('change', e => e.target.matches('input') && e.target.value.length ? e.target.classList.add('focus') : e.target.classList.remove('focus'));
