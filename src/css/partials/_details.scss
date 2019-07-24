@@ -1,10 +1,6 @@
 .details {
   padding-left:30px;
 
-  @include mobile {
-    padding-left: 60px;
-  }
-
   &__detail {
     padding: $spacer/2 0;
     position: relative;
@@ -97,6 +93,9 @@
   }
 
   &--left {
+    @include mobile {
+      padding-left: 60px;
+    }
     .details {
       &__detail {
         &::before {
@@ -112,6 +111,9 @@
   }
 
   &--right {
+    @include mobile {
+      padding-right: 60px;
+    }
     .details {
       &__detail {
         text-align:right;
