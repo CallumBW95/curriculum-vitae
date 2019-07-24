@@ -76,6 +76,7 @@ header {
     text-align: center;
     color: $primary;
     transition: all 0.3s;
+    font-family: $font-secondary;
     font-size: 20px;
     @media(min-width: 768px) { 
       font-size:24px;
