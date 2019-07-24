@@ -1,14 +1,14 @@
 footer {
   background-color: darken($secondary, 5%);
   padding: $spacer/2 0;
-  @media (max-width:767px) {
+  @include mobile {
     flex-direction: column;
   }
 }
 
 .social {
   padding: 0 $spacer;
-  @media (max-width:767px) {
+  @include mobile {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -39,7 +39,7 @@ footer {
   padding: 0 20px;
   display: inherit;
 
-  @media (max-width:767px) {
+  @include mobile {
     display: flex;
     justify-content: center;
 

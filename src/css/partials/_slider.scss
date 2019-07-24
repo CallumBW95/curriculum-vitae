@@ -73,7 +73,7 @@
     }
   }
 
-  @media(max-width: 767px){
+  @include mobile {
     &__prev {
       left: -10px;
     }

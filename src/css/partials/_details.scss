@@ -1,7 +1,7 @@
 .details {
   padding-left:30px;
 
-  @media (max-width: 767px) {
+  @include mobile {
     padding-left: 60px;
   }
 
@@ -9,6 +9,10 @@
     padding: $spacer/2 0;
     position: relative;
     display: flex;
+    flex-direction: column;
+    &--simple {
+      flex-direction: row;
+    }
 
     &::before {
       content: '';
@@ -79,7 +83,7 @@
       display: inline-block;
       font-family: $font-secondary;
 
-      @media(max-width: 767px) {
+      @include mobile {
         font-size: 14px;
       }
     }
@@ -93,7 +97,7 @@
       font-size:16px;
       vertical-align:top;
       
-      @media(max-width:767px) {
+      @include mobile {
         font-size: 12px;
       }
     }

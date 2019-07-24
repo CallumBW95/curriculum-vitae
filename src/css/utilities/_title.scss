@@ -2,7 +2,7 @@
   font-family: $font-primary;
   
   
-  @media(min-width: 768px) {
+  @include desktop {
     &--sw-left {
       position: absolute;
       bottom: 50%;
@@ -18,7 +18,7 @@
     }
   }
 
-  @media(max-width:767px) {
+  @include mobile {
     font-size: 20px;
   }
 
@@ -30,7 +30,7 @@
       display:inline-block;
       background-color: $primary;
       margin-right:5px;
-      @media(max-width:767px) {
+      @include mobile {
         height:3px;
         width:10px;
       }
