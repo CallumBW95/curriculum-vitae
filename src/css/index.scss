@@ -1,0 +1,11 @@
+@import "./variables.scss";
+@import "./utility.scss";
+@import "./fonts.scss";
+@import "./partials.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+	background-color: $white;
+}

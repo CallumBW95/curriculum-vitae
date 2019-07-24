@@ -1,0 +1,17 @@
+.experience {
+  height: 40px;
+  
+  &__dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $white;
+    display: inline-block;
+    margin-right: $spacer/4;
+    margin-top: 10px;
+
+    &--filled {
+      background-color: $primary;
+    }
+  }
+}

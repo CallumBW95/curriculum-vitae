@@ -1,0 +1,43 @@
+.title {
+  font-family: $font-primary;
+  
+  
+  @media(min-width: 768px) {
+    &--sw-left {
+      position: absolute;
+      bottom: 50%;
+      right: 0;
+      transform: rotate(-90deg) translate(-40px, 30px);
+    }
+
+    &--sw-right {
+      position: absolute;
+      bottom: 50%;
+      left: 0;
+      transform: rotate(90deg) translate(0px, 20px);
+    }
+  }
+
+  @media(max-width:767px) {
+    font-size: 20px;
+  }
+
+  &--us {
+    &::before {
+      content: '';
+      height:5px;
+      width:20px;
+      display:inline-block;
+      background-color: $primary;
+      margin-right:5px;
+      @media(max-width:767px) {
+        height:3px;
+        width:10px;
+      }
+    }
+  }
+
+  &--center {
+    text-align: center;
+  }
+}

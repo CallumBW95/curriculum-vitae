@@ -1,0 +1,17 @@
+.c{
+  &--primary {
+    color: $primary;
+  }
+  &--secondary {
+    color: $secondary;
+  }
+  &--tertiary {
+    color: $tertiary;
+  }
+  &--light-grey {
+    color: $light-grey;
+  }
+  &--white {
+    color: $white;
+  }
+}
