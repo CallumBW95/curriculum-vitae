@@ -1,0 +1,61 @@
+$typography: () !default;
+$black: #000 !default;
+
+@mixin create-typography(
+  $name,
+  $font: Ariel,
+  $weight: 400,
+  $size: 16px,
+  $line-height: 18px,
+  $letter-spacing: 0,
+  $color: $black,
+  $additional: (),
+  $mobile: ()
+) {
+  @if type-of(map-get($typography, $name)) == "null" {
+    $typography: map-merge(
+      $typography,
+      (
+        $name: (
+          default:
+            map-merge(
+              (
+                font-family: $font,
+                font-size: $size,
+                font-weight: $weight,
+                line-height: $line-height,
+                letter-spacing: $letter-spacing,
+                color: $color
+              ),
+              $additional
+            ),
+          mobile: $mobile
+        )
+      )
+    ) !global;
+  }
+}
+
+@mixin typography($type, $styles: ()) {
+  $typo: map-get($typography, $type);
+  $default: map-get($typo, default);
+  $mobile: map-get($typo, 'mobile');
+
+  @include map-styles(map-merge($default, $styles));
+
+  @if (length($mobile) > 0) {
+    @include r(mobile, tablet) {
+      @include map-styles($mobile);
+    }
+  }
+}
+
+// depricated 
+@mixin override-typography($args...) {
+  @include typography($args...);
+}
+
+// Alias'
+@mixin t($args...) {
+  @include typography($args...);
+}

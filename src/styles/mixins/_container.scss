@@ -1,0 +1,47 @@
+@mixin container($args...) {
+  @if ($args == null) or (length($args) == 0) {
+    $args: mobile, tablet, desktop, ultrawide;
+  }
+  
+  margin: 0 auto;
+
+  @if (contains($args, ultrawide)) {
+    @include responsive(ultrawide) {
+      width: 100%;
+      max-width: calc(#{$cw-desktop} + #{(2 * $g-desktop)});
+      padding-left: $g-desktop;
+      padding-right: $g-desktop;
+    }
+  }
+
+  @if (contains($args, desktop)) {
+    @include responsive(desktop) {
+      width: 100%;
+      max-width: calc(#{$cw-desktop} + #{(2 * $g-desktop)});
+      padding-left: $g-desktop;
+      padding-right: $g-desktop;
+    }
+  }
+
+  @if (contains($args, tablet)) {
+    @include responsive(tablet) {
+      width: calc(100% - #{2 * $g-tablet});
+    }
+  }
+
+  @if (contains($args, mobile)) {
+    @include responsive(mobile) {
+      width: calc(100% - #{2 * $g-mobile});
+    }
+  }
+}
+
+@mixin side-container($side: left, $percentage: 50, $offset: 0) {
+  width: 100%;
+  max-width: #{($cw-desktop * ($percentage / 100) + $offset)};
+  @if ($side == 'left') {
+    margin: 0 0 0 auto;  
+  } @else if ($side == 'right') {
+    margin: 0 auto 0 0;
+  }
+}

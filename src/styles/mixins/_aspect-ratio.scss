@@ -1,0 +1,22 @@
+@mixin aspect-ratio($width, $height, $c-width: 100%) {
+  height: 0;
+  width: $c-width;
+  padding-top: aspect-ratio($width, $height, $c-width);
+  
+  img {
+    @include object-fit(cover);
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// alias
+
+@mixin ar($args...) {
+  @include aspect-ratio($args...);
+}

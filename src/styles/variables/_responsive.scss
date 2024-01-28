@@ -1,0 +1,27 @@
+// Breakpoints
+$mobile-min: 320px;
+$mobile-max: 599px;
+$tablet-min: $mobile-max + 1;
+$tablet-max: 1023px;
+$desktop-min: $tablet-max + 1;
+$desktop-max: 1919px;
+$ultrawide-min: $desktop-max + 1;
+$ultrawide-max: null;
+
+// Breakpoint Edge Cases
+$small-desktop-min: $desktop-min;
+$small-desktop-max: 1499px;
+$big-desktop-min: $small-desktop-max + 1;
+$big-desktop-max: 1919px;
+
+// Content Widths
+$cw-ultrawide: 1920px;
+$cw-desktop: 1200px;
+$cw-mobile: 335px;
+
+// Gutters
+$g-desktop: 10vw;
+$g-tablet: 10vw;
+$g-mobile: 9.4vw;
+
+$spacer: 32px;

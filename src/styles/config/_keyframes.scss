@@ -1,0 +1,14 @@
+@keyframes shadowPulse {
+  33% {
+    background: $white;
+    box-shadow: -24px 0 $turquoise, 24px 0 $white;
+  }
+  66% {
+    background: $turquoise;
+    box-shadow: -24px 0 $white, 24px 0 $white;
+  }
+  100% {
+    background: $white;
+    box-shadow: -24px 0 $white, 24px 0 $turquoise;
+  }
+}

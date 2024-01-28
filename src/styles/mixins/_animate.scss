@@ -1,0 +1,31 @@
+@mixin animate($direction-from: null, $fade-in: true, $duration: $a-medium) {
+  transition: all $duration;
+
+  @if ($fade-in) {
+    opacity: 0;
+
+    .animate-in & {
+      opacity: 1;
+    }
+  }
+
+  @if ($direction-from == "up") {
+    transform: translate(0, -50px);
+  } @else if ($direction-from == "down") {
+    transform: translate(0, 50px);
+  } @else if ($direction-from == "left") {
+    transform: translate(-50px, 0);
+  } @else if ($direction-from == "right") {
+    transform: translate(50px, 0);
+  }
+
+  @if ($direction-from) {
+    .animate-in & {
+      transform: translate(0, 0);
+    }
+  }
+}
+
+@mixin animate-order($order: 0, $step-duration: $a-medium) {
+  transition-delay: calc($order * $step-duration);
+}

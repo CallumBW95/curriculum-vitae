@@ -1,0 +1,105 @@
+.event {
+  display: grid;
+  background: darken($red, 10);
+  padding: calc($spacer / 2);
+  border-radius: 10px;
+  gap: calc($spacer);
+
+  @include r(mobile, tablet) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "description" "details";
+  }
+  @include r(desktop, ultrawide) {
+    grid-template-columns: 250px 1fr;
+    grid-template-areas: "details description";
+  }
+
+  &__details {
+    background: lighten($red, 10);
+    grid-area: details;
+    padding: calc($spacer * 0.625) calc($spacer / 2) calc($spacer / 2);
+    border-radius: 10px;
+
+    @include r(tablet) {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: calc($spacer / 8);
+      &:has(#{&}-date) {
+        grid-template-areas: "role type" "date type";
+      }
+      &:not(:has(#{&}-date)) {
+        grid-template-areas: "role type";
+        align-items: center;
+      }
+    }
+    @include r(mobile, desktop, ultrawide) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: calc($spacer / 4);
+    }
+
+    &-role {
+      font-family: $font-monospaced;
+      font-size: 18px;
+      @include r(mobile, tablet) {
+        grid-area: role;
+      }
+    }
+
+    &-date {
+      font-family: $font-primary;
+      margin-bottom: calc($spacer / 4);
+      font-size: 12px;
+      @include r(mobile, tablet) {
+        grid-area: date;
+      }
+    }
+
+    &-type {
+      font-family: $font-primary;
+      background: $turquoise;
+      padding: calc($spacer/4) calc($spacer/2);
+      display: inline-block;
+      border-radius: 20px;
+      display: flex;
+      gap: calc($spacer / 4);
+      align-items: center;
+
+      @include r(mobile, tablet) {
+        grid-area: type;
+        align-self: start;
+      }
+    }
+  }
+  &__description {
+    grid-area: description;
+    padding: calc($spacer / 2) 0;
+    font-family: $font-primary;
+
+    &-title {
+      font-size: 24px;
+      margin: 0 0 calc($spacer/2);
+      color: $white;
+    }
+
+    &-content {
+      & > * {
+        &:not(:last-child) {
+          margin: 0 0 calc($spacer / 4);
+        }
+      }
+
+      ul {
+        list-style: initial;
+        padding-left: calc($spacer / 2);
+
+        li {
+          &:not(:last-child) {
+            margin: 0 0 calc($spacer/8);
+          }
+        }
+      }
+    }
+  }
+}

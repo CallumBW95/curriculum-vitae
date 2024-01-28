@@ -1,0 +1,97 @@
+// $checkboxes: ();
+
+// @mixin create-checkbox(
+//   $name,
+//   $default: (),
+//   $hover: (),
+//   $click: (),
+//   $disabled: (),
+//   $before: (),
+//   $after: ()
+// ) {
+//   $checkboxes: map-merge(
+//     $checkboxes,
+//     (    
+//       $name: (
+//         default: $default,
+//         hover: $hover,
+//         click: $click,
+//         disabled: $disabled,
+//         before: $before,
+//         after: $after
+//       )
+//     )
+//   ) !global;
+// }
+
+@mixin checkbox($size:22px) {
+  margin: 0 0 20px;
+
+  input[type=checkbox] {
+    display: none;
+
+
+    &:checked + label{
+      &::before {
+        background-color: $green;
+        color: $white;
+      }
+
+      &::after {
+        content: '';
+      }
+    }
+
+    &[disabled] {
+      color: $grey;
+      & + label {
+        &::before {
+          border-color: $grey;
+        }
+
+        &:hover {
+          &::before {
+            border-color: $grey;
+          }
+        }
+      }
+    }
+  }
+
+  label {
+    padding-left: $size*1.5;
+    position: relative;
+    height: 22px;
+    display: block;
+    
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top:0;
+      left:0;
+      border: 1px solid $green;
+      height: $size;
+      width: $size;
+      background-color: $white;
+      transition: background-color $a-short;
+    }
+
+    &::after {
+      position: absolute;
+      top: #{$size * 0.136};
+      left: #{$size * 0.36};
+      width: #{$size * 0.27};
+      height: #{$size * 0.59};
+      border-bottom: #{$size * 0.09} solid white;
+      border-right: #{$size * 0.09} solid white;
+      transform: rotate(45deg);
+    }
+
+    &:hover {
+      &:before {
+        border-color: $green--light;
+      }
+    }
+  }
+}

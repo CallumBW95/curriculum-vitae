@@ -1,0 +1,32 @@
+.contact {
+  background: darken($blue, 20);
+
+  @include r(mobile, tablet) {
+    padding: $spacer 0 calc($spacer + 60px);
+  }
+
+  @include r(desktop, ultrawide) {
+    padding: $spacer 0;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    font-size: 50px;
+    color: $white;
+    margin: 0 0 $spacer;
+    text-align: center;
+    font-family: $font-primary;
+
+    span {
+      color: $turquoise;
+    }
+  }
+
+  &__form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,30 @@
+.skill {
+  display: grid;
+  grid-template-areas: "name value";
+  grid-template-columns: 125px 1fr;
+  gap: calc($spacer / 2);
+
+  &__name {
+    font-family: $font-monospaced;
+    font-size: 18px;
+    text-align: end;
+  }
+
+  &__bar {
+    background: lighten($grey, 10);
+    border-radius: 20px;
+    overflow: hidden;
+
+    &-value {
+      background: $turquoise;
+      height: 100%;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: all $a-medium;
+
+      .animate-in & {
+        transform: scaleX(1);
+      }
+    }
+  }
+}

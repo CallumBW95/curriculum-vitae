@@ -1,0 +1,105 @@
+// primary
+// secondary
+// download
+$buttons: ();
+.btn {
+  &.primary {
+    fill: none;
+  }
+}
+
+@mixin create-button($name, $default: (), $hover: (), $click: (), $disabled: (), $before: (), $after: ()) {
+  $buttons: map-merge(
+    $buttons,
+    (
+      $name: (
+        default: $default,
+        hover: $hover,
+        click: $click,
+        disabled: $disabled,
+        before: $before,
+        after: $after,
+      ),
+    )
+  ) !global;
+}
+
+@mixin button($name) {
+  $button: map-get($buttons, $name);
+  $default: map-get($button, default);
+  $hover: map-get($button, hover);
+  $click: map-get($button, click);
+  $disbled: map-get($button, disabled);
+
+  $before: map-get($button, before);
+  $after: map-get($button, after);
+
+  @include map-styles($default);
+
+  @if (length($before) > 0) or (length($after) > 0) {
+    position: relative;
+    overflow: hidden;
+
+    @if (length($before) > 0) {
+      @include pseudo() {
+        content: "";
+        z-index: -1;
+        @include map-styles($before);
+      }
+    }
+
+    @if (length($after) > 0) {
+      @include pseudo(after) {
+        content: "";
+        z-index: -2;
+        @include map-styles($after);
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    @include map-styles($hover);
+  }
+
+  &:active {
+    @include map-styles($click);
+  }
+
+  &[disabled] {
+    @include map-styles($disbled);
+
+    @if (length($before) > 0) {
+      @include pseudo() {
+        border-color: map-get($disbled, color);
+      }
+    }
+
+    @if (length($after) > 0) {
+      @include pseudo(after) {
+        background-color: map-get($disbled, color);
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+@mixin button-reset() {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+
+// Alias'
+@mixin b($args...) {
+  @include button($args...);
+}

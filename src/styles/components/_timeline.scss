@@ -1,0 +1,35 @@
+.timeline {
+  background: $red;
+  padding: calc($spacer * 2) 0;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    @include animate;
+    @include animate-order(0);
+    font-family: $font-primary;
+    font-size: 50px;
+    margin: 0 0 calc($spacer * 1.5);
+    text-align: center;
+    span {
+      color: $turquoise;
+    }
+  }
+
+  &__events {
+    display: flex;
+    flex-direction: column;
+    gap: $spacer;
+  }
+
+  &__event {
+    @include animate("right");
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        @include animate-order($i);
+      }
+    }
+  }
+}
