@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import useOnScreen from "../hooks/UseOnScreen";
+import useOnScreen from "../hooks/useOnScreen";
 
 function About() {
   const elementRef = useRef<HTMLDivElement>(null);

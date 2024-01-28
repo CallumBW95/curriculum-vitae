@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
 import { SkillInterface, SoftSkillInterface } from "../data/skills";
-import useOnScreen from "../hooks/UseOnScreen";
+import useOnScreen from "../hooks/useOnScreen";
 
 interface Props {
-  skillData: SkillInterface;
-  softSkillData: SoftSkillInterface;
+  skillData: SkillInterface[];
+  softSkillData: SoftSkillInterface[];
 }
 
 function Skills(props: Props) {
@@ -25,7 +25,7 @@ function Skills(props: Props) {
         </h2>
         {Array.isArray(skillData) && (
           <ul className="skills__skills">
-            {skillData.map(({ name, value }, i) => (
+            {skillData.map(({ name, value }) => (
               <li className="skills__skill skills__skill--hard skill">
                 <h3 className="skill__name">{name}</h3>
                 <div className="skill__bar">

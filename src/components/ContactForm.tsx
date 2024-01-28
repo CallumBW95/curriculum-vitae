@@ -1,8 +1,8 @@
-import { useRef, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 function ContactForm() {
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
   const { VITE_EMAIL_SERVICE_ID, VITE_EMAIL_PUBLIC_KEY, VITE_EMAIL_TEMPLATE_ID } = import.meta.env;
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formError, setFormError] = useState(false);
@@ -47,15 +47,14 @@ function ContactForm() {
     },
   ];
 
-  const onSubmit = async (e) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     setFormLoading(true);
-
     const result = await emailjs.sendForm(
       VITE_EMAIL_SERVICE_ID,
       VITE_EMAIL_TEMPLATE_ID,
-      form.current,
+      form.current!,
       VITE_EMAIL_PUBLIC_KEY
     );
 
@@ -79,7 +78,7 @@ function ContactForm() {
         <h2 className="contact__title">
           Get in <span>touch</span>
         </h2>
-        <form className="contact__form form" ref={form} onSubmit={onSubmit}>
+        <form className="contact__form form" ref={form} onSubmit={(event: FormEvent) => onSubmit(event)}>
           {(formSubmitted || formError) && (
             <div className="form__notifications">
               {formSubmitted && (
