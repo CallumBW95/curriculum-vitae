@@ -10,7 +10,7 @@ export const ProjectsData:ProjectsInteface[] = [
   {
     image: '/portfolio/bt-smart-bases.netlify.app.jpg',
     title: 'BT - Smart Bases',
-    link: 'bt-smart-bases.netlify.app/',
+    link: 'https://bt-smart-bases.netlify.app/',
     description: "Sed tempor venenatis nunc, at gravida metus consectetur nec. Nunc porttitor tempus nisl at egestas. Suspendisse potenti. Quisque diam purus, ullamcorper eget eros et, euismod tincidunt nibh.",
     tags: ['single page', 'interactive']
   },
