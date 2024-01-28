@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSchool, faBriefcase } from "@fortawesome/free-solid-svg-icons";
-import useOnScreen from "../hooks/UseOnScreen";
+import useOnScreen from "../hooks/useOnScreen";
 import { EventInterface } from "../data/event";
 
 interface Props {

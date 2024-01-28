@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faCodepen, faGithub } from "@fortawesome/free-brands-svg-icons";
-import useOnScreen from "../hooks/UseOnScreen";
+import useOnScreen from "../hooks/useOnScreen";
 
 function Header() {
   const elementRef = useRef<HTMLDivElement>(null);
