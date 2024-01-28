@@ -56,8 +56,7 @@ export const EventsData: EventInterface[] = [
     type: "Education",
     role: "BTEC Level 3 - ICT",
     title: "City of Bath College",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et magna mauris. Nullam dapibus interdum massa in sodales. Cras risus tortor, tempor id odio at, porttitor ornare purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam eu ante et enim gravida auctor vel id dolor. ",
+    description:"",
     date: {
       from: "",
       to: "",
@@ -67,8 +66,7 @@ export const EventsData: EventInterface[] = [
     type: "Education",
     role: "10 GCSE's - Level C & above",
     title: "The Corsham School",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et magna mauris. Nullam dapibus interdum massa in sodales. Cras risus tortor, tempor id odio at, porttitor ornare purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam eu ante et enim gravida auctor vel id dolor. ",
+    description:"",
     date: {
       from: "",
       to: "",
