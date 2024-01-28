@@ -1,0 +1,88 @@
+@mixin triangle($position: tl, $color: red, $scale: x, $offset: 0, $id: 0) {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  $pseudo: after;
+  @if ($id != 1) {
+    $pseudo: before;
+  }
+  
+  $yOffset: $offset;
+  $xOffset: $offset;
+
+  @if ($offset > 0) {
+    $yOffset: calc(0px + #{$offset});
+    $xOffset: calc(-3425px + #{ 100% - $offset});
+  }
+
+  @include pseudo($pseudo) {
+    position: absolute;
+    height: 4000px;
+    width: 4000px;
+    transform: rotate(45deg);
+    z-index: -1;
+    pointer-events: none;
+
+    @if ($color == $buff) {
+      background-color: rgba($color, 0.5);
+    } @else {
+      background-color: $color;
+    }
+
+    @if ($position == tl) {
+      @if ($scale == y) {
+        bottom: $yOffset;
+        left: -2828px;
+      }
+      @else if ($scale == x) {
+        bottom: 0;
+        left: $xOffset;
+      }
+    }
+    @else if ($position == tr) {
+      @if ($scale == y) {
+        bottom: $yOffset;
+        right: -2828px;
+      }
+      @else if ($scale == x) {
+        bottom: 0;
+        right: $xOffset;
+      }
+    }
+    @else if ($position == bl) {
+      @if ($scale == y) {
+        top: $yOffset;
+        left: -2828px;
+      }
+      @else if ($scale == x) {
+        top: 0;
+        left: $xOffset;
+      }
+    }
+    @else if ($position == br) {
+      @if ($scale == y) {
+        top: $yOffset;
+        right: -2828px;
+      }
+      @else if ($scale == x) {
+        top: 0;
+        right: $xOffset;
+      }
+    }
+    
+    @content;
+  }
+}
+
+@mixin remove-triangle($id: 0) {
+  $pseudo: after;
+
+  @if ($id != 1) {
+    $pseudo: before;
+  }
+
+  @include pseudo($pseudo) {
+    content: initial;
+  }
+}

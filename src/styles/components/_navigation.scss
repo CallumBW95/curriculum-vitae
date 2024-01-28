@@ -1,0 +1,85 @@
+.navigation {
+  position: fixed;
+  background: $black;
+  padding: calc($spacer / 2) 0;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  height: 60px;
+
+  @include r(mobile, tablet) {
+    bottom: 0;
+  }
+  @include r(desktop, ultrawide) {
+    top: 0;
+  }
+
+  &__container {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    color: $turquoise;
+    font-family: $font-monospaced;
+    font-weight: $f-bold;
+    font-size: 24px;
+  }
+
+  &__toggle {
+    @include r(mobile, tablet) {
+      color: $white;
+      font-size: 24px;
+    }
+
+    @include r(desktop, ultrawide) {
+      display: none;
+    }
+  }
+
+  &__nav {
+    color: $white;
+    font-family: $font-primary;
+
+    @include r(mobile, tablet) {
+      transform: translateX(100%);
+      background: $grey;
+      position: fixed;
+      bottom: 60px;
+      right: 0;
+      width: 100vw;
+      max-width: 420px;
+      max-height: 100vh;
+      z-index: -1;
+      transition: transform $a-short;
+      border-top-left-radius: 75px;
+    }
+
+    &--active {
+      @include r(mobile, tablet) {
+        transform: translateX(0);
+      }
+    }
+
+    ul {
+      display: flex;
+      height: 100%;
+      align-items: center;
+
+      @include r(mobile, tablet) {
+        flex-direction: column;
+        gap: $spacer;
+        padding: $spacer 0;
+      }
+
+      @include r(desktop, ultrawide) {
+        gap: calc($spacer / 2);
+      }
+
+      li {
+        font-size: 20px;
+      }
+    }
+  }
+}

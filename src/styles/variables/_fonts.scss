@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Courier+Prime:wght@700&display=swap");
+
+$font-josefin-sans: "jolos-sans", sans-serif;
+$font-courier-prime: "courier-prime", monospace;
+
+// Fonts
+$font-primary: $font-josefin-sans;
+$font-secondary: sans-serif;
+$font-monospaced: $font-courier-prime;
+
+// Font Weights
+$f-light: 300;
+$f-regular: 400;
+$f-medium: 500;
+$f-semibold: 600;
+$f-bold: 700;
+$f-heavy: 800;
+
+$html-font-size: 16px;

@@ -1,0 +1,47 @@
+.hobbies {
+  background: $blue;
+  padding: $spacer 0;
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    font-size: 50px;
+    font-family: $font-primary;
+    text-align: center;
+    margin: 0 0 $spacer;
+    color: $white;
+
+    span {
+      color: $turquoise;
+    }
+  }
+
+  &__hobbies {
+  }
+
+  &__slides {
+    display: flex;
+    gap: calc($spacer * 2);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__slide {
+    @include flex-center;
+    display: flex;
+    flex-direction: column;
+    gap: calc($spacer / 2);
+
+    svg {
+      width: 75px;
+      height: 75px;
+      color: $turquoise;
+    }
+
+    &-name {
+      color: $white;
+      font-family: $font-monospaced;
+    }
+  }
+}

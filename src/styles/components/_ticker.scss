@@ -1,0 +1,26 @@
+.ticker {
+  background: $blue;
+  padding: $spacer 0;
+
+  &__container {
+    @include container;
+  }
+
+  &__ticker {
+  }
+
+  &__slides {
+    display: flex;
+    gap: calc($spacer * 2);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__slide {
+    @include flex-center;
+    svg {
+      width: 75px;
+      height: auto;
+    }
+  }
+}

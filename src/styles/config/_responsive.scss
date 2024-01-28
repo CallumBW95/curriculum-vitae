@@ -1,0 +1,9 @@
+// Responsive
+@include create-breakpoint(ultrawide, $ultrawide-min, null);
+@include create-breakpoint(desktop, $desktop-min, $desktop-max);
+@include create-breakpoint(tablet, $tablet-min, $tablet-max);
+@include create-breakpoint(mobile, null, $mobile-max);
+
+// Responsive edge cases
+@include create-breakpoint(big-desktop, $big-desktop-min, $big-desktop-max);
+@include create-breakpoint(small-desktop, $small-desktop-min, $small-desktop-max);

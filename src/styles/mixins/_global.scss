@@ -1,0 +1,44 @@
+@mixin map-styles($styles) {
+	@each $style, $value in $styles {
+		#{$style}: #{$value};
+	}
+}
+
+@mixin pseudo($loc: before) {
+	@if ($loc == before) {
+		&::before {
+			content: '';
+			display: block;
+			@content;
+		}
+	}
+	@if ($loc == after) {
+		&::after {
+			content: '';
+			display: block;
+			@content;
+		}
+	}
+}
+
+@mixin clickable-block ($pos: after){
+	position: relative;
+
+	a {
+		@include pseudo($pos) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+@mixin hide-scrollbar() {
+	-ms-overflow-style: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}

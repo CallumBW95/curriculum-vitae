@@ -1,0 +1,77 @@
+.portfolio {
+  background: $red;
+  padding: calc($spacer * 2) 0;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    font-size: 50px;
+    font-family: $font-primary;
+    text-align: center;
+    margin: 0 0 $spacer;
+
+    span {
+      color: $turquoise;
+    }
+  }
+
+  &__filters {
+    margin: 0 0 $spacer;
+  }
+
+  &__tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: calc($spacer / 2) $spacer;
+    flex-wrap: wrap;
+  }
+
+  &__tag {
+    background: $white;
+    color: $black;
+    padding: calc($spacer / 4) calc($spacer / 2);
+    border-radius: 20px;
+    font-family: $font-monospaced;
+    font-size: 20px;
+    cursor: pointer;
+    text-transform: capitalize;
+    white-space: normal;
+
+    &--active {
+      background: $turquoise;
+    }
+  }
+
+  &__projects {
+    display: grid;
+    gap: $spacer;
+
+    @include r(mobile) {
+      grid-template-columns: 1fr;
+    }
+    @include r(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include r(desktop, ultrawide) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__project {
+    @include animate("bottom");
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        @include animate-order(2 + $i);
+      }
+    }
+  }
+
+  &__noprojects {
+    text-align: center;
+    font-family: $font-monospaced;
+    font-size: 28px;
+  }
+}

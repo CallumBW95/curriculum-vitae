@@ -1,0 +1,37 @@
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function contains($list, $var) {
+  $contains: false;
+  @each $item in $list {
+    @if $item == $var {
+      $contains: true;
+    }
+  }
+  @return $contains;
+}
+
+@function force-px($val) {
+  @return #{strip-unit($val)}Px;
+}
+
+@function fluid-width($cols, $gutter) {
+  @return calc((100% / #{$cols}) - #{($gutter / $cols) * ($cols - 1)});
+}
+
+@function aspect-ratio($width, $height, $c-width) {
+  @return #{strip-unit(($height / ($width / (strip-unit($c-width) / 100)))) * 100}#{"%"};
+}
+
+@function stripUnit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@function toRem($pxValue) {
+  @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}
