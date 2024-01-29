@@ -30,7 +30,7 @@ export const SkillData:SkillInterface[] = [
   },
   {
     name: 'TypeScript',
-    value: 5
+    value: 7
   },
   {
     name: 'SASS',
