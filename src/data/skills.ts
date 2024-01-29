@@ -30,7 +30,7 @@ export const SkillData:SkillInterface[] = [
   },
   {
     name: 'TypeScript',
-    value: 5
+    value: 7
   },
   {
     name: 'SASS',
@@ -53,7 +53,10 @@ export const SoftSkillData:SoftSkillInterface[] = [
     name: 'Client Facing'
   },
   {
-    name: 'Time Management'
+    name: 'Attention to Detail'
+  },
+  {
+    name: 'Team Leading'
   },
   {
     name: 'Version Control'
