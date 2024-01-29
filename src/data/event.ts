@@ -15,7 +15,7 @@ export const EventsData: EventInterface[] = [
     type: "Full Time",
     role: "Full Stack Developer",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et magna mauris. Nullam dapibus interdum massa in sodales. Cras risus tortor, tempor id odio at, porttitor ornare purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam eu ante et enim gravida auctor vel id dolor. ",
+      "",
     date: {
       from: "January 2022",
       to: "Current",
