@@ -60,5 +60,11 @@ export const SoftSkillData:SoftSkillInterface[] = [
   },
   {
     name: 'Version Control'
-  }
+  },
+  {
+    name: 'Pixel perfect'
+  },
+  {
+    name: 'Communication'
+  },
 ]

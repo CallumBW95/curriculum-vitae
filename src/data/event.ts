@@ -15,7 +15,7 @@ export const EventsData: EventInterface[] = [
     type: "Full Time",
     role: "Full Stack Developer",
     description:
-      "",
+      "<p>During my time at Eleven Miles I have enjoyed having the opportunity to work on larger projects as well as more interactive work than the average cookie cutter website I have primarily worked on in past agencies. This has given me the opportunity to work on projects that require high quality front end work with dependable back end functionality.</p><p>I have also spent time at the company improving my soft skills, for example I still take a lot of the undertakings on a day to day basis that I have done in previous roles, but they are now completed to a much higher standard in a more efficient and timely manner. I have really ustilised my time well in perfecting my approach to work and web development whilst working for the company.</p><p>I have also helped the team on the whole in the creation of CLI tools to help automate various tasks, for example the updating of plugins on our WordPress based websites. I have also been looking in my spare time at creating a headless version of wordpress that utilises react whilst utilising gutenberg functionality. For this I created an alternative to ACF which has the majority of the same functionality but instead is also built in react.</p>",
     date: {
       from: "January 2022",
       to: "Current",
